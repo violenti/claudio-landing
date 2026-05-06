@@ -87,18 +87,46 @@
   }
 
   /* Install Section */
+  #contact {
+    padding: 40px 0;
+  }
+
+  #contact .container {
+    padding: 0 10px;
+  }
+
+  #contact .col-lg-8 {
+    padding: 0;
+  }
+
   #contact code {
-    font-size: 0.75em !important;
+    font-size: 0.7em !important;
     padding: 8px !important;
     word-break: break-all;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   #contact h3 {
     font-size: 1.2em !important;
+    margin-bottom: 20px !important;
   }
 
   #contact h4 {
     font-size: 1em !important;
+    margin-bottom: 10px !important;
+  }
+
+  .install-section > div {
+    margin: 15px 0 !important;
+    padding: 15px !important;
+  }
+
+  .install-section .btn {
+    display: block !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+    text-align: center;
   }
 
   /* Buttons */
