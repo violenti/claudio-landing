@@ -1,0 +1,244 @@
+/* Mobile-First Terminal Design */
+
+/* Mobile Base Styles (default) */
+@media screen and (max-width: 767px) {
+  /* Typography */
+  body {
+    font-size: 12px !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 { font-size: 1.5em !important; }
+  h2 { font-size: 1.3em !important; }
+  h3 { font-size: 1.1em !important; }
+
+  /* Navigation */
+  .navbar-default .navbar-toggle {
+    border-color: var(--tty-fg) !important;
+    background-color: transparent !important;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: var(--tty-fg) !important;
+  }
+
+  .navbar-default .navbar-toggle:hover,
+  .navbar-default .navbar-toggle:focus {
+    background-color: rgba(0, 255, 0, 0.1) !important;
+  }
+
+  .navbar-collapse {
+    background-color: var(--tty-bg) !important;
+    border-top: 1px solid var(--tty-fg);
+  }
+
+  /* Header Logo */
+  .terminal-logo pre {
+    font-size: 0.8em !important;
+    margin: 20px 0 !important;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  /* Header Text */
+  header .intro-text .name {
+    font-size: 1.8em !important;
+  }
+
+  header .intro-text .skills {
+    font-size: 1em !important;
+  }
+
+  /* Install Command */
+  header .intro-text p {
+    font-size: 0.9em !important;
+    word-break: break-all;
+    padding: 0 10px;
+  }
+
+  /* Feature Cards */
+  .feature-item {
+    margin-bottom: 20px !important;
+  }
+
+  .feature-item > div {
+    height: auto !important;
+    min-height: 150px !important;
+    padding: 15px !important;
+  }
+
+  .feature-item h3 {
+    font-size: 1em !important;
+    margin-bottom: 10px !important;
+  }
+
+  .feature-item p {
+    font-size: 0.8em !important;
+  }
+
+  /* About Section */
+  section.success {
+    padding: 50px 0;
+  }
+
+  section {
+    padding: 50px 0;
+  }
+
+  /* Install Section */
+  #contact code {
+    font-size: 0.75em !important;
+    padding: 8px !important;
+    word-break: break-all;
+  }
+
+  #contact h3 {
+    font-size: 1.2em !important;
+  }
+
+  #contact h4 {
+    font-size: 1em !important;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 10px 15px !important;
+    font-size: 0.9em !important;
+    margin: 5px !important;
+  }
+
+  .btn-lg {
+    padding: 12px 20px !important;
+    font-size: 1em !important;
+  }
+
+  /* Footer */
+  footer .footer-col {
+    margin-bottom: 30px;
+  }
+
+  footer h3 {
+    font-size: 1.1em !important;
+  }
+
+  footer p {
+    font-size: 0.9em !important;
+  }
+
+  /* Utility */
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  hr.star-light,
+  hr.star-primary {
+    margin: 15px auto 20px;
+  }
+
+  /* Remove scan lines on mobile for performance */
+  body::before {
+    display: none;
+  }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .terminal-logo pre {
+    font-size: 1.5em !important;
+  }
+
+  header .intro-text .name {
+    font-size: 2.5em !important;
+  }
+
+  .feature-item > div {
+    height: 180px !important;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 992px) {
+  .terminal-logo pre {
+    font-size: 2em !important;
+  }
+
+  .feature-item > div {
+    height: 200px !important;
+  }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1200px) {
+  .terminal-logo pre {
+    font-size: 2.5em !important;
+  }
+}
+
+/* Landscape Mobile */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  .terminal-logo pre {
+    font-size: 0.6em !important;
+    margin: 10px 0 !important;
+  }
+
+  header {
+    padding: 30px 0;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  a, button, .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px;
+  }
+
+  /* Remove hover effects on touch */
+  a:hover {
+    text-shadow: none !important;
+  }
+
+  .btn:hover {
+    box-shadow: none !important;
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  body::before {
+    animation: none !important;
+  }
+
+  .cursor::after {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .navbar,
+  footer,
+  .btn {
+    display: none !important;
+  }
+}
