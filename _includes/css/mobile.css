@@ -1,7 +1,166 @@
 /* Mobile-First Terminal Design */
 
-/* Mobile Base Styles (default) */
-@media screen and (max-width: 767px) {
+/* iPhone 16 and modern mobile (393x852) */
+@media screen and (max-width: 430px) {
+  /* Typography optimized for small screens */
+  body {
+    font-size: 11px !important;
+    padding: 0;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  h1 { font-size: 1.3em !important; }
+  h2 { font-size: 1.2em !important; }
+  h3 { font-size: 1em !important; }
+
+  /* Container adjustments */
+  .container {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+    max-width: 100% !important;
+  }
+
+  /* Header optimizations */
+  .terminal-logo pre {
+    font-size: 0.6em !important;
+    margin: 15px 0 !important;
+    overflow-x: auto;
+    white-space: pre;
+    padding: 0 5px;
+  }
+
+  header .intro-text .name {
+    font-size: 1.5em !important;
+  }
+
+  header .intro-text .skills {
+    font-size: 0.9em !important;
+  }
+
+  header .intro-text p {
+    font-size: 0.7em !important;
+    word-break: break-all;
+    padding: 0 5px;
+    margin: 15px 0 !important;
+  }
+
+  /* Feature cards */
+  .feature-item {
+    margin-bottom: 15px !important;
+  }
+
+  .feature-item > div {
+    height: auto !important;
+    min-height: 120px !important;
+    padding: 10px !important;
+    margin: 0 5px;
+  }
+
+  .feature-item h3 {
+    font-size: 0.9em !important;
+    margin-bottom: 8px !important;
+  }
+
+  .feature-item p {
+    font-size: 0.75em !important;
+    line-height: 1.3;
+  }
+
+  /* Install section specific for iPhone */
+  #contact {
+    padding: 20px 0 !important;
+  }
+
+  #contact .col-lg-8 {
+    padding: 0 !important;
+  }
+
+  .install-section > div {
+    margin: 8px 0 !important;
+    padding: 8px !important;
+    border-radius: 3px !important;
+  }
+
+  #contact code {
+    font-size: 0.6em !important;
+    padding: 5px !important;
+    line-height: 1.2 !important;
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    margin: 5px 0;
+  }
+
+  #contact h3 {
+    font-size: 1.1em !important;
+    margin-bottom: 15px !important;
+  }
+
+  #contact h4 {
+    font-size: 0.85em !important;
+    margin-bottom: 6px !important;
+  }
+
+  .install-section .btn {
+    display: block !important;
+    width: calc(100% - 10px) !important;
+    margin: 6px 5px !important;
+    padding: 10px 6px !important;
+    font-size: 0.8em !important;
+  }
+
+  /* Footer adjustments */
+  footer .footer-col {
+    margin-bottom: 20px;
+  }
+
+  footer h3 {
+    font-size: 1em !important;
+  }
+
+  footer p {
+    font-size: 0.8em !important;
+  }
+
+  /* Navigation for small screens */
+  .navbar-default .navbar-toggle {
+    border-color: var(--tty-fg) !important;
+    background-color: transparent !important;
+    padding: 6px 8px;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: var(--tty-fg) !important;
+  }
+
+  .navbar-collapse {
+    background-color: var(--tty-bg) !important;
+    border-top: 1px solid var(--tty-fg);
+  }
+
+  /* Remove scan lines on mobile for performance */
+  body::before {
+    display: none !important;
+  }
+
+  /* Section padding adjustments */
+  section {
+    padding: 30px 0 !important;
+  }
+
+  section.success {
+    padding: 30px 0 !important;
+  }
+
+  hr.star-light,
+  hr.star-primary {
+    margin: 10px auto 15px;
+  }
+}
+
+/* Standard Mobile Base Styles (default) */
+@media screen and (max-width: 767px) and (min-width: 431px) {
   /* Typography */
   body {
     font-size: 12px !important;
