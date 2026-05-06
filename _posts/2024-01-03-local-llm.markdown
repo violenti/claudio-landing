@@ -1,0 +1,11 @@
+---
+layout: default
+modal-id: 3
+date: 2024-01-03
+img: ollama.png
+alt: Local LLM Support
+project-date: 2024
+client: Claudio
+category: Local AI
+description: Run AI models locally with Ollama integration. Perfect for privacy-conscious users or when working offline. Support for popular open-source models like Llama, Mistral, and CodeLlama. Keep your data private while maintaining AI capabilities.
+---

@@ -1,23 +1,19 @@
-<!-- Portfolio Grid Section -->
+<!-- Features Section -->
 <section id="portfolio">
-  <div class="container portfolio-flex-grid">
+  <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2>Portfolio</h2>
+        <h2>Features</h2>
         <hr class="star-primary">
       </div>
     </div>
-    <div class="portfolio-flex-row">
+    <div class="row">
       {% for post in site.posts %}
-      <div class="portfolio-flex-item portfolio-item">
-        <a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
-        </a>
+      <div class="col-md-4 col-sm-6 feature-item" style="margin-bottom: 30px;">
+        <div style="background: #001100; border: 2px solid #00ff00; padding: 20px; border-radius: 5px; height: 200px;">
+          <h3 style="color: #00ff00; text-align: center; margin-bottom: 15px; font-size: 1.2em;">{{ post.category }}</h3>
+          <p style="color: #00ff00; text-align: center; font-size: 0.9em;">{{ post.description }}</p>
+        </div>
       </div>
       {% endfor %}
     </div>

@@ -1,11 +1,11 @@
 # Site settings
-title: Freelancer
-email: your-email@domain.com
-url: https://github.com/jeromelachaud/freelancer-theme
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
-keywords: "your keywords, separated by commas"
-skills: "Web Developer - Graphic Artist - User Experience Designer"
-meta_author: LastName FirstName
+title: Claudio 🐔
+email: hello@claudio.ai
+url: https://github.com/violenti/claudio
+description: "Lightweight AI assistant powered by Anthropic and OpenAI - Your terminal-based AI companion"
+keywords: "AI assistant, Claude, OpenAI, Anthropic, terminal, CLI, golang, LLM"
+skills: "AI Assistant - Multi-LLM Support - Terminal Native - Open Source"
+meta_author: Claudio Team
 
 # Google webmaster tools
 google_verify:
@@ -25,38 +25,30 @@ disqus_shortname: myshortname
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: 18bc9c #80B3FF
-  primary-rgb: "24,288,156" #"128,179,255"
-  secondary: 2c3e50 #FD6E8A
-  secondary-dark: 233140 #A2122F
+  primary: 00ff00 #Terminal green
+  primary-rgb: "0,255,0"
+  secondary: 00ff00 #Terminal green
+  secondary-dark: 008800 #Dark green
 
 # Footer settings
 footer:
-  copyright: Dr. Henry Jekyll
-  location: Location
-  social: Around the Web
-  credits: Credits
+  copyright: Claudio Team
+  location: Open Source
+  social: Connect With Us
+  credits: Built with ❤️
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: twitter
-    url: http://twitter.com/jekyllrb
-  - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
-  - title: bitbucket
-    url: http://bitbucket.org/jekyll
   - title: github
-    url: http://github.com/jekyll
+    url: https://github.com/violenti/claudio
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
+  - line: 742 Evergreen Terrace
+  - line: Springfield
 
 # Credits content
-credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
+credits: ''
 
 # Build settings
 markdown: kramdown

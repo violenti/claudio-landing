@@ -1,0 +1,368 @@
+/* Terminal TTY Style */
+:root {
+  --tty-bg: #000000;
+  --tty-fg: #00ff00;
+  --tty-bright: #00ff00;
+  --tty-dim: #008800;
+  --tty-accent: #00ffff;
+  --tty-error: #ff0000;
+  --tty-warning: #ffff00;
+  --tty-link: #00bbff;
+  --tty-link-hover: #00ffff;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--tty-bg);
+}
+
+body {
+  background-color: var(--tty-bg) !important;
+  color: var(--tty-fg) !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 14px;
+  line-height: 1.4;
+  text-shadow: 0 0 3px rgba(0, 255, 0, 0.5);
+  position: relative;
+}
+
+/* Terminal scan lines effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 255, 0, 0.03) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 10px;
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--tty-bright) !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+}
+
+h1::before { content: "# "; }
+h2::before { content: "## "; }
+h3::before { content: "### "; }
+
+p {
+  color: var(--tty-fg) !important;
+  margin: 1em 0;
+}
+
+/* Links */
+a {
+  color: var(--tty-link) !important;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+a::before {
+  content: "[";
+  color: var(--tty-dim);
+}
+
+a::after {
+  content: "]";
+  color: var(--tty-dim);
+}
+
+a:hover {
+  color: var(--tty-link-hover) !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+}
+
+/* Navigation */
+.navbar {
+  background-color: var(--tty-bg) !important;
+  border-bottom: 2px solid var(--tty-fg);
+  box-shadow: 0 2px 10px rgba(0, 255, 0, 0.3);
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: var(--tty-fg) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: var(--tty-bright) !important;
+  background-color: rgba(0, 255, 0, 0.1) !important;
+}
+
+.navbar-default .navbar-brand {
+  color: var(--tty-bright) !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Sections */
+header {
+  background: linear-gradient(135deg, #000000 0%, #001100 100%) !important;
+  border-bottom: 2px solid var(--tty-fg);
+}
+
+header .intro-text .name {
+  color: var(--tty-bright) !important;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 1);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); }
+  to { text-shadow: 0 0 20px rgba(0, 255, 0, 1), 0 0 30px rgba(0, 255, 0, 0.8); }
+}
+
+header .intro-text .skills {
+  color: var(--tty-fg) !important;
+  font-size: 1.25em;
+}
+
+section {
+  background-color: var(--tty-bg) !important;
+}
+
+section.success {
+  background-color: #000500 !important;
+  border-top: 1px solid var(--tty-dim);
+  border-bottom: 1px solid var(--tty-dim);
+}
+
+/* Portfolio items */
+#portfolio .portfolio-item {
+  position: relative;
+  margin-bottom: 30px;
+  border: 1px solid var(--tty-dim);
+  background: #000500;
+  transition: all 0.3s ease;
+}
+
+#portfolio .portfolio-item:hover {
+  border-color: var(--tty-bright);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+#portfolio .portfolio-item .portfolio-link {
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid var(--tty-fg);
+}
+
+#portfolio .portfolio-item .portfolio-link .caption .caption-content {
+  color: var(--tty-bright) !important;
+}
+
+/* Buttons */
+.btn {
+  font-family: 'Courier New', Courier, monospace !important;
+  text-transform: uppercase;
+  background-color: transparent !important;
+  color: var(--tty-fg) !important;
+  border: 2px solid var(--tty-fg) !important;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.btn::before {
+  content: "> ";
+  margin-right: 5px;
+}
+
+.btn:hover {
+  color: var(--tty-bright) !important;
+  border-color: var(--tty-bright) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  background-color: rgba(0, 255, 0, 0.05) !important;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+}
+
+.btn-success, .btn-primary {
+  border-color: var(--tty-bright) !important;
+  color: var(--tty-bright) !important;
+}
+
+.btn-outline {
+  background-color: transparent !important;
+  color: var(--tty-fg) !important;
+  border: 2px solid var(--tty-fg) !important;
+}
+
+/* Forms */
+.form-control {
+  background-color: #001100 !important;
+  border: 1px solid var(--tty-fg) !important;
+  color: var(--tty-bright) !important;
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+.form-control:focus {
+  border-color: var(--tty-bright) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5) !important;
+  background-color: #002200 !important;
+}
+
+.form-control::placeholder {
+  color: var(--tty-dim) !important;
+}
+
+/* Footer */
+footer {
+  background-color: var(--tty-bg) !important;
+  border-top: 2px solid var(--tty-fg);
+}
+
+footer .footer-above {
+  background-color: #000500 !important;
+}
+
+footer .footer-below {
+  background-color: var(--tty-bg) !important;
+  color: var(--tty-dim) !important;
+}
+
+footer h3 {
+  color: var(--tty-bright) !important;
+}
+
+/* Social buttons */
+.btn-social {
+  border: 2px solid var(--tty-fg) !important;
+  color: var(--tty-fg) !important;
+  background-color: transparent !important;
+}
+
+.btn-social:hover {
+  border-color: var(--tty-bright) !important;
+  color: var(--tty-bright) !important;
+  background-color: rgba(0, 255, 0, 0.1) !important;
+}
+
+/* Remove brackets from social buttons */
+.btn-social::before,
+.btn-social::after {
+  content: "" !important;
+}
+
+/* Modal */
+.portfolio-modal .modal-content {
+  background-color: var(--tty-bg) !important;
+  border: 2px solid var(--tty-fg) !important;
+  color: var(--tty-fg) !important;
+}
+
+.portfolio-modal .close-modal {
+  background-color: var(--tty-bg) !important;
+  border: 2px solid var(--tty-fg) !important;
+}
+
+.portfolio-modal .close-modal:hover {
+  border-color: var(--tty-error) !important;
+  color: var(--tty-error) !important;
+}
+
+.portfolio-modal .modal-backdrop {
+  background-color: var(--tty-bg) !important;
+  opacity: 0.9 !important;
+}
+
+/* HR */
+hr.star-light,
+hr.star-primary {
+  border-color: var(--tty-fg) !important;
+  max-width: 250px;
+  margin: 25px auto 30px;
+}
+
+hr.star-light::after,
+hr.star-primary::after {
+  content: "<<<*>>>" !important;
+  color: var(--tty-bright) !important;
+  background-color: var(--tty-bg) !important;
+  font-size: 1.2em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: var(--tty-bg);
+}
+
+::-webkit-scrollbar-track {
+  background-color: #001100;
+  border: 1px solid var(--tty-dim);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--tty-dim);
+  border: 1px solid var(--tty-fg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tty-fg);
+}
+
+/* Text selection */
+::selection {
+  background-color: var(--tty-bright);
+  color: var(--tty-bg);
+}
+
+::-moz-selection {
+  background-color: var(--tty-bright);
+  color: var(--tty-bg);
+}
+
+/* Terminal cursor animation */
+.cursor::after {
+  content: "_";
+  animation: blink 1s infinite;
+  color: var(--tty-bright);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Code blocks */
+code, pre {
+  background-color: #001100 !important;
+  color: var(--tty-bright) !important;
+  border: 1px solid var(--tty-dim) !important;
+  padding: 5px;
+  font-family: 'Courier New', Courier, monospace !important;
+}
